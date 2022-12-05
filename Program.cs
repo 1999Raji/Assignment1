@@ -18,7 +18,7 @@ namespace Assignment1
         private static object elementCount;
         private static object drop;
 
-        public static object Assert { get; private set; }
+        //public static object Assert { get; private set; }
 
         static void Main()
         {
@@ -155,6 +155,8 @@ namespace Assignment1
         {
             IWebElement window = driver.FindElement(By.Id("openwindow"));
             window.Click();
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             Thread.Sleep(2000);
 
@@ -166,6 +168,8 @@ namespace Assignment1
         {
             IWebElement open = driver.FindElement(By.Id("opentab"));
             open.Click();
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             Thread.Sleep(2000);
 
